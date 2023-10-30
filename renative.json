@@ -1,0 +1,32 @@
+{
+    "platforms": {},
+    "defaults": {
+        "title": "LegacyTV",
+        "id": "com.legacy.tv",
+        "supportedPlatforms": [
+            "android",
+            "androidtv",
+            "firetv",
+            "tvos",
+            "tizen",
+            "webos"
+        ]
+    },
+    "engines": {
+        "@rnv/engine-rn": "source:rnv",
+        "@rnv/engine-rn-tvos": "source:rnv",
+        "@rnv/engine-rn-web": "source:rnv"
+    },
+    "plugins": {},
+    "extendsTemplate": "renative.json",
+    "projectName": "legacy-tv",
+    "workspaceID": "rnv",
+    "templates": {
+        "@flexn/create-template-starter": {
+            "version": "1.2.1"
+        }
+    },
+    "currentTemplate": "@flexn/create-template-starter",
+    "isNew": true,
+    "isMonorepo": false
+}
