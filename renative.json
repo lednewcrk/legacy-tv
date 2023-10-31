@@ -1,32 +1,271 @@
 {
-    "platforms": {},
+    "engines": {
+        "@rnv/engine-lightning": "source:rnv",
+        "@rnv/engine-rn": "source:rnv",
+        "@rnv/engine-rn-electron": "source:rnv",
+        "@rnv/engine-rn-next": "source:rnv",
+        "@rnv/engine-rn-tvos": "source:rnv",
+        "@rnv/engine-rn-web": "source:rnv"
+    },
+    "projectName": "legacy-tv",
+    "workspaceID": "rnv",
+    "paths": {
+        "appConfigsDir": "./appConfigs",
+        "entryDir": "./",
+        "platformAssetsDir": "./platformAssets",
+        "platformBuildsDir": "./platformBuilds",
+        "pluginTemplates": {
+            "flexn": {
+                "npm": "@flexn/plugins",
+                "path": "./pluginTemplates"
+            }
+        }
+    },
     "defaults": {
-        "title": "LegacyTV",
-        "id": "com.legacy.tv",
         "supportedPlatforms": [
             "android",
             "androidtv",
             "firetv",
             "tvos",
             "tizen",
-            "webos"
-        ]
+            "webos",
+            "web"
+        ],
+        "title": "LegacyTV",
+        "id": "com.legacy.tv"
     },
-    "engines": {
-        "@rnv/engine-rn": "source:rnv",
-        "@rnv/engine-rn-tvos": "source:rnv",
-        "@rnv/engine-rn-web": "source:rnv"
+    "isMonorepo": false,
+    "plugins": {
+        "@flexn/create": {
+            "source": "flexn",
+            "version": "1.2.1"
+        },
+        "@rnv/renative": {
+            "source": "flexn",
+            "version": "0.37.3"
+        },
+        "react-native": "source:flexn",
+        "react-native-web": "source:flexn",
+        "react-native-tvos": "source:flexn",
+        "react-native-vector-icons": "source:flexn",
+        "@lightningjs/cli": "source:flexn",
+        "@lightningjs/sdk": "source:flexn",
+        "react": "source:flexn",
+        "react-art": "source:flexn",
+        "react-dom": "source:flexn",
+        "@react-native-community/cli-platform-ios": "source:flexn",
+        "@react-native-community/cli": "source:flexn",
+        "next": "source:flexn",
+        "@react-navigation": "source:flexn",
+        "@react-navigation/elements": "source:flexn",
+        "react-native-screens": "source:flexn",
+        "react-native-safe-area-context": "source:flexn",
+        "react-native-reanimated": "source:flexn",
+        "@react-native-masked-view/masked-view": "source:flexn",
+        "react-native-media-query": "source:flexn",
+        "@flexn/shopify-flash-list": "source:flexn",
+        "@flexn/recyclerlistview": "source:flexn",
+        "react-native-gesture-handler": "source:flexn"
     },
-    "plugins": {},
+    "platforms": {
+        "android": {
+            "minSdkVersion": 26,
+            "targetSdkVersion": 33,
+            "compileSdkVersion": 33,
+            "buildToolsVersion": "30.0.0",
+            "gradleBuildToolsVersion": "4.2.2",
+            "gradleWrapperVersion": "6.7.1",
+            "kotlinVersion": "1.7.10",
+            "reactNativeEngine": "hermes",
+            "enableAndroidX": true,
+            "gradle.properties": {
+                "android.useDeprecatedNdk": true,
+                "android.enableJetifier": true,
+                "android.useAndroidX": true,
+                "android.debug.obsoleteApi": true,
+                "org.gradle.jvmargs": "-Xmx3g -XX:MaxPermSize=2048m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8",
+                "org.gradle.daemon": true,
+                "org.gradle.parallel": true,
+                "org.gradle.configureondemand": true
+            },
+            "AndroidManifest": {
+                "children": [
+                    {
+                        "tag": "application",
+                        "android:name": ".MainApplication",
+                        "android:usesCleartextTraffic": true,
+                        "tools:targetApi": 28,
+                        "children": [
+                            {
+                                "tag": "activity",
+                                "android:name": ".MainActivity",
+                                "android:exported": true
+                            },
+                            {
+                                "tag": "activity",
+                                "android:name": ".SplashActivity",
+                                "android:exported": true
+                            }
+                        ]
+                    }
+                ]
+            },
+            "mainActivity": {
+                "onCreate": "super.onCreate(null)"
+            }
+        },
+        "androidtv": {
+            "engine": "engine-rn-tvos",
+            "minSdkVersion": 26,
+            "targetSdkVersion": 33,
+            "compileSdkVersion": 33,
+            "buildToolsVersion": "30.0.0",
+            "gradleBuildToolsVersion": "4.2.2",
+            "gradleWrapperVersion": "6.7.1",
+            "kotlinVersion": "1.7.10",
+            "reactNativeEngine": "hermes",
+            "enableAndroidX": true,
+            "gradle.properties": {
+                "android.useDeprecatedNdk": true,
+                "android.enableJetifier": true,
+                "android.useAndroidX": true,
+                "android.debug.obsoleteApi": true,
+                "org.gradle.jvmargs": "-Xmx3g -XX:MaxPermSize=2048m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8",
+                "org.gradle.daemon": true,
+                "org.gradle.parallel": true,
+                "org.gradle.configureondemand": true
+            },
+            "AndroidManifest": {
+                "children": [
+                    {
+                        "tag": "application",
+                        "android:name": ".MainApplication",
+                        "android:usesCleartextTraffic": true,
+                        "tools:targetApi": 30,
+                        "children": [
+                            {
+                                "tag": "activity",
+                                "android:name": ".MainActivity",
+                                "android:exported": true
+                            },
+                            {
+                                "tag": "activity",
+                                "android:name": ".SplashActivity",
+                                "android:exported": true
+                            }
+                        ]
+                    }
+                ]
+            },
+            "mainActivity": {
+                "onCreate": "super.onCreate(null)"
+            }
+        },
+        "firetv": {
+            "engine": "engine-rn-tvos",
+            "minSdkVersion": 26,
+            "targetSdkVersion": 33,
+            "compileSdkVersion": 33,
+            "buildToolsVersion": "30.0.0",
+            "gradleBuildToolsVersion": "4.2.2",
+            "gradleWrapperVersion": "6.7.1",
+            "kotlinVersion": "1.7.10",
+            "reactNativeEngine": "hermes",
+            "enableAndroidX": true,
+            "gradle.properties": {
+                "android.useDeprecatedNdk": true,
+                "android.enableJetifier": true,
+                "android.useAndroidX": true,
+                "android.debug.obsoleteApi": true,
+                "org.gradle.jvmargs": "-Xmx3g -XX:MaxPermSize=2048m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8",
+                "org.gradle.daemon": true,
+                "org.gradle.parallel": true,
+                "org.gradle.configureondemand": true
+            },
+            "AndroidManifest": {
+                "children": [
+                    {
+                        "tag": "application",
+                        "android:name": ".MainApplication",
+                        "android:usesCleartextTraffic": true,
+                        "tools:targetApi": 30
+                    }
+                ]
+            },
+            "mainActivity": {
+                "onCreate": "super.onCreate(null)"
+            }
+        },
+        "ios": {
+            "engine": "engine-rn",
+            "reactNativeEngine": "hermes",
+            "deploymentTarget": "14.0"
+        },
+        "web": {
+            "engine": "engine-rn-next",
+            "webpackConfig": {
+                "nextTranspileModules": [
+                    "lodash-es"
+                ]
+            }
+        },
+        "chromecast": {
+            "engine": "engine-rn-next",
+            "webpackConfig": {
+                "nextTranspileModules": [
+                    "lodash-es"
+                ]
+            }
+        },
+        "tizen": {
+            "engine": "engine-rn-web",
+            "target": "es5"
+        },
+        "webos": {
+            "engine": "engine-rn-web"
+        },
+        "tvos": {
+            "engine": "engine-rn-tvos",
+            "reactNativeEngine": "hermes",
+            "deploymentTarget": "14.0"
+        },
+        "macos": {
+            "engine": "engine-rn-electron",
+            "excludedPlugins": [
+                "react-native-linear-gradient"
+            ]
+        },
+        "windows": {
+            "engine": "engine-rn-electron"
+        }
+    },
+    "permissions": {
+        "ios": {},
+        "android": {
+            "INTERNET": {
+                "key": "android.permission.INTERNET",
+                "security": "normal"
+            },
+            "SYSTEM_ALERT_WINDOW": {
+                "key": "android.permission.SYSTEM_ALERT_WINDOW",
+                "security": "signature"
+            }
+        }
+    },
+    "crypto": {
+        "optional": true,
+        "encrypt": {
+            "dest": "PROJECT_HOME/secrets/privateConfigs.enc"
+        },
+        "decrypt": {
+            "source": "PROJECT_HOME/secrets/privateConfigs.enc"
+        }
+    },
     "extendsTemplate": "renative.json",
-    "projectName": "legacy-tv",
-    "workspaceID": "rnv",
     "templates": {
         "@flexn/create-template-starter": {
             "version": "1.2.1"
         }
     },
-    "currentTemplate": "@flexn/create-template-starter",
-    "isNew": true,
-    "isMonorepo": false
+    "currentTemplate": "@flexn/create-template-starter"
 }
