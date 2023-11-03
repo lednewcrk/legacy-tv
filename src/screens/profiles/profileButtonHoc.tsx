@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-
-import { ProfileButton } from '../../components'
-import { Profile } from '../../utils/data'
-import { Spacer } from '../../components/spacer/spacer'
 import { getScaledValue } from '@rnv/renative'
+import { ProfileButton } from '@components/index'
+import { Profile } from '@utils/data'
+import { Spacer } from '@components/spacer/spacer'
 
 type ProfileButtonHocProps = {
     item: Profile

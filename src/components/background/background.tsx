@@ -1,8 +1,7 @@
 import React from 'react'
 import { ImageStyle, StyleProp, ViewStyle } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
-
-import { useTheme } from '../../hooks'
+import { useTheme } from '@hooks/index'
 
 type BackgroundProps = {
     children?: React.ReactNode

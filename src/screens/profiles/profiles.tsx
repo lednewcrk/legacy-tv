@@ -2,10 +2,10 @@ import React, { useContext } from 'react'
 import { useWindowDimensions, Text, StyleSheet } from 'react-native'
 import { Screen, FlashList } from '@flexn/create'
 import { getScaledValue } from '@rnv/renative'
+import { FontFamily, ThemeContext } from '@config/theme'
+import { Spacer, Background } from '@components/index'
+import { PROFILES, Profile } from '@utils/data'
 
-import { FontFamily, ThemeContext } from '../../config/theme'
-import { Spacer, Background } from '../../components'
-import { PROFILES, Profile } from '../../utils/data'
 import { ProfileButtonHoc } from './profileButtonHoc'
 
 type ScreenProfilesProps = {

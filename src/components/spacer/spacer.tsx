@@ -1,5 +1,5 @@
-import { View } from '@flexn/create'
 import React from 'react'
+import { View } from '@flexn/create'
 
 type SpacerProps = {
     width?: number

@@ -6,7 +6,7 @@ import {
     PressableFocusOptions
 } from '@flexn/create'
 import Icon from 'react-native-vector-icons/MaterialIcons'
-import { useTheme } from '../../hooks'
+import { useTheme } from '@hooks/index'
 import { getScaledValue } from '@rnv/renative'
 
 type ProfileEditActionProps = {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { StyleProp, ViewStyle, ImageStyle } from 'react-native'
 import {
     Pressable,
@@ -7,7 +7,7 @@ import {
     PressableProps
 } from '@flexn/create'
 import { getScaledValue } from '@rnv/renative'
-import { useTheme } from '../../hooks'
+import { useTheme } from '@hooks/index'
 
 type ProfileAvatarProps = {
     source?: string

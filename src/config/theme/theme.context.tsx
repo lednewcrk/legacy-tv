@@ -1,6 +1,6 @@
 import React, { createContext, ReactNode, useState, useMemo } from 'react'
 import { themes } from './theme'
-import { Theme } from '../../types/types'
+import { Theme } from '../../types'
 
 type ThemeContextType = {
     theme: Theme

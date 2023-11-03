@@ -1,6 +1,6 @@
 import { getScaledValue } from '@rnv/renative'
 import StyleSheet from 'react-native-media-query'
-import { StaticTheme } from '../../types/types'
+import { StaticTheme } from '../../types'
 import { FontFamily } from './fonts'
 
 export const LAYOUT = { w: 1920, h: 1080 }

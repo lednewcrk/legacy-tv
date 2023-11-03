@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text } from '@flexn/create'
 
-import { useTheme } from '../../hooks'
+import { useTheme } from '@hooks/index'
 import { FontFamily } from '../../config/theme'
 
 type ProfileNameProps = {

@@ -2,7 +2,26 @@
     "extends": "@flexn/typescript-config/tsconfig.app.json",
     "compilerOptions": {
         "outDir": "./lib",
-        "rootDir": "."
+        "rootDir": ".",
+        "baseUrl": ".",
+        "paths": {
+            "tests": ["tests/*"],
+            "@components/*": ["src/components/*"],
+            "@types/*": ["src/types/*"],
+            "@navigation/*": ["src/navigation/*"],
+            "@hooks/*": ["src/hooks/*"],
+            "@assets/*": ["src/assets/*"],
+            "@config/*": ["src/config/*"],
+            "@utils/*": ["src/utils/*"],
+            "@context/*": ["src/context/*"],
+            "@screens/*": ["src/screens/*"]
+        }
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+    "exclude": [
+        "node_modules",
+        "babel.config.js",
+        "metro.config.js",
+        "jest.config.js"
+    ]
 }
