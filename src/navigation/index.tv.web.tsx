@@ -1,3 +1,3 @@
-import navigation from './index.tv.native';
+import navigation from './index.tv.native'
 
-export default navigation;
+export default navigation

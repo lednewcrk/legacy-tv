@@ -1,19 +1,23 @@
-import { useFocusEffect, useNavigation } from '@react-navigation/native';
-import { Linking } from 'react-native';
-import { isPlatformIos, isPlatformAndroid, isPlatformMacos } from '@rnv/renative';
+import { useFocusEffect, useNavigation } from '@react-navigation/native'
+import { Linking } from 'react-native'
+import {
+    isPlatformIos,
+    isPlatformAndroid,
+    isPlatformMacos
+} from '@rnv/renative'
 
 export function useNavigate({ navigation }: any) {
     function navigate(route: string, params?: any) {
-        navigation.navigate(route, params);
+        navigation.navigate(route, params)
     }
-    return navigate;
+    return navigate
 }
 
 export function usePop({ navigation }: any) {
     function pop() {
-        navigation.pop();
+        navigation.pop()
     }
-    return pop;
+    return pop
 }
 
 export function useReplace({ navigation }: any) {
@@ -21,31 +25,31 @@ export function useReplace({ navigation }: any) {
         if (isPlatformIos || isPlatformAndroid) {
             navigation.reset({
                 index: 0,
-                routes: [{ name: route }],
-            });
+                routes: [{ name: route }]
+            })
         } else {
-            navigation.navigate(route);
+            navigation.navigate(route)
         }
     }
-    return replace;
+    return replace
 }
 
 export function useOpenDrawer({ navigation }: any) {
     function openDrawer() {
-        navigation.dispatch({ type: 'OPEN_DRAWER' });
+        navigation.dispatch({ type: 'OPEN_DRAWER' })
     }
-    return openDrawer;
+    return openDrawer
 }
 
 export function useOpenURL() {
     async function openURL(url: string) {
         if (isPlatformIos || isPlatformAndroid || isPlatformMacos) {
-            await Linking.openURL(url);
+            await Linking.openURL(url)
         } else {
             // error happened
         }
     }
-    return openURL;
+    return openURL
 }
 
-export { useFocusEffect, useNavigation };
+export { useFocusEffect, useNavigation }

@@ -5,5 +5,6 @@ export {
     useOpenDrawer,
     useOpenURL,
     useReplace,
-    useNavigation,
-} from './navigation';
+    useNavigation
+} from './navigation'
+export { useTheme } from './useTheme'

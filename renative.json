@@ -65,7 +65,10 @@
         "react-native-media-query": "source:flexn",
         "@flexn/shopify-flash-list": "source:flexn",
         "@flexn/recyclerlistview": "source:flexn",
-        "react-native-gesture-handler": "source:flexn"
+        "react-native-gesture-handler": "source:flexn",
+        "react-native-svg": "source:rnv",
+        "svgs": "source:rnv",
+        "react-native-linear-gradient": "source:rnv"
     },
     "platforms": {
         "android": {

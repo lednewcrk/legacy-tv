@@ -1,5 +1,5 @@
-import React from 'react';
-import ScreenHome from '../screens/home';
+import React from 'react'
+import ScreenHome from '../screens/profiles/profiles'
 
-const Page = () => <ScreenHome />;
-export default Page;
+const Page = () => <ScreenHome />
+export default Page
