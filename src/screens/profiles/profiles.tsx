@@ -4,34 +4,20 @@ import { Screen, FlashList } from '@flexn/create'
 import { getScaledValue } from '@rnv/renative'
 import { FontFamily, ThemeContext } from '@config/theme'
 import { Spacer, Background } from '@components/index'
-import { PROFILES, Profile } from '@utils/data'
+import { PROFILES } from '@utils/data'
 
 import { ProfileButtonHoc } from './profileButtonHoc'
+import { ProfileListUtils } from './profilesListUtils'
 
 type ScreenProfilesProps = {
     navigation?: any
     route?: any
 }
 
-export const ScreenProfiles = ({}: ScreenProfilesProps) => {
+export const ScreenProfiles = ({ navigation, route }: ScreenProfilesProps) => {
     const { height } = useWindowDimensions()
     const { theme } = useContext(ThemeContext)
-
-    const getItemId = (item: Profile) => `profle-${item.id}`
-
-    const getNextFocusLeft = (itemIndex: number) => {
-        if (itemIndex - 1 < 0) {
-            return undefined
-        }
-        return getItemId(PROFILES[itemIndex - 1])
-    }
-
-    const getNextFocusRight = (itemIndex: number) => {
-        if (itemIndex + 1 >= PROFILES.length) {
-            return undefined
-        }
-        return getItemId(PROFILES[itemIndex + 1])
-    }
+    const profileListUtils = new ProfileListUtils(PROFILES)
 
     const renderItem = ({ item, focusRepeatContext, index, target }: any) => {
         return (
@@ -39,9 +25,9 @@ export const ScreenProfiles = ({}: ScreenProfilesProps) => {
                 index={index}
                 item={item}
                 focusRepeatContext={focusRepeatContext}
-                getItemId={getItemId}
-                getNextFocusLeft={getNextFocusLeft}
-                getNextFocusRight={getNextFocusRight}
+                getItemId={profileListUtils.getItemId}
+                getNextFocusLeft={profileListUtils.getNextFocusLeft}
+                getNextFocusRight={profileListUtils.getNextFocusRight}
             />
         )
     }
@@ -72,7 +58,7 @@ export const ScreenProfiles = ({}: ScreenProfilesProps) => {
                     horizontal
                     showsHorizontalScrollIndicator={false}
                     style={{ height: getScaledValue(200) }}
-                    keyExtractor={(it, _) => getItemId(it)}
+                    keyExtractor={(it, _) => profileListUtils.getItemId(it)}
                     ItemSeparatorComponent={() => (
                         <Spacer width={getScaledValue(11)} />
                     )}
